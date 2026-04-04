@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean4Me — Cleaning & Property Management in Elgin</title>
+  <meta name="description" content="Elgin's trusted cleaning and property management company. 500+ happy clients, 4.9★ Google rating. Book your spotless space today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><img src="logo.png" alt="Clean4Me" class="nav__logo-img">Clean4ME</a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link active">Home</a>
+      <a href="cleaning.html" class="nav__link">Cleaning</a>
+      <a href="property-management.html" class="nav__link">Property Management</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+    <div class="nav__cta">
+      <a href="#contact" class="btn btn--primary">Get in Touch</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="cleaning.html">Cleaning</a>
+  <a href="property-management.html">Property Management</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero__bg">
+    <div class="hero__overlay"></div>
+    <div class="hero__grain"></div>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="Modern clean home interior" loading="eager">
+  </div>
+  <div class="hero__shape hero__shape--1"></div>
+  <div class="hero__shape hero__shape--2"></div>
+  <div class="container">
+    <div class="hero__content" style="max-width:620px;">
+      <span class="overline" style="color:rgba(255,255,255,0.7);">Trusted by local homeowners, landlords, and businesses</span>
+      <h1 style="margin-top:0.75rem;">Cleaning you can rely on, every time.</h1>
+      <p>From regular cleaning to full property support, we keep your space clean, presentable, and ready when it matters. We show up on time, do the job properly, and make sure nothing gets missed.</p>
+      <div class="hero__actions">
+        <a href="cleaning.html" class="btn btn--primary btn--lg">Our Cleaning Services</a>
+        <a href="property-management.html" class="btn btn--white btn--lg">Property Management</a>
+      </div>
+    </div>
+    <div class="hero__float">
+      <div class="hero__float-stars">★★★★★</div>
+      <div style="display:flex;align-items:baseline;gap:0.5rem;">
+        <div class="hero__float-rating">4.9</div>
+        <div class="hero__float-text">out of 5</div>
+      </div>
+      <div class="hero__float-text" style="margin-top:0.35rem;">Based on 127+ Google Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <div class="trust-bar__inner">
+    <div class="trust-item">
+      <div class="trust-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div>
+        <div class="trust-item__value">4.9★ Rated</div>
+        <div class="trust-item__label">Based on local customer reviews</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div>
+        <div class="trust-item__value">Trusted Locally</div>
+        <div class="trust-item__label">Homeowners, landlords &amp; businesses</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="trust-item__value">Fully Insured</div>
+        <div class="trust-item__label">For your peace of mind</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-item__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="trust-item__value">Always On Time</div>
+        <div class="trust-item__label">Reliable, consistent service</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SERVICES OVERVIEW ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <span class="overline">What We Do</span>
+      <h2>Cleaning and property support, handled properly.</h2>
+      <p>Whether it's a one-off clean or ongoing property care, we keep your space clean, presentable, and ready when it matters.</p>
+    </div>
+    <div class="grid grid-2" style="gap:2rem;">
+      <!-- Cleaning Card -->
+      <div class="card reveal reveal-delay-1" style="position:relative;">
+        <div style="overflow:hidden;">
+          <img class="card__img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Professional cleaning service" style="aspect-ratio:16/9;">
+        </div>
+        <div class="card__body" style="padding:2rem;">
+          <span class="card__tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l3 1 1-3"/><path d="M14 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/><path d="M5.2 7l1.4 1.6c.5.6.4 1.5-.2 2L3 13.5"/><path d="M21 15l-5.5-3.5a2 2 0 0 0-2.5.3L9 16"/><path d="M18 20H3"/><path d="M21 12l-3 3"/></svg>
+            Cleaning Services
+          </span>
+          <h3 style="font-size:1.5rem;margin:0.75rem 0 0.5rem;">Professional Cleaning</h3>
+          <p class="card__text">Residential, commercial, deep cleaning, and move-in/out services. Eco-friendly products, background-checked staff, and a 100% satisfaction guarantee.</p>
+          <a href="cleaning.html" class="btn btn--ghost" style="margin-top:1rem;">
+            Explore Services
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Property Management Card -->
+      <div class="card reveal reveal-delay-2" style="position:relative;">
+        <div style="overflow:hidden;">
+          <img class="card__img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Property management" style="aspect-ratio:16/9;">
+        </div>
+        <div class="card__body" style="padding:2rem;">
+          <span class="card__tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Property Management
+          </span>
+          <h3 style="font-size:1.5rem;margin:0.75rem 0 0.5rem;">Full-Service Management</h3>
+          <p class="card__text">Tenant screening, rent collection, maintenance coordination, inspections, and financial reporting. We treat your property like our own.</p>
+          <a href="property-management.html" class="btn btn--ghost" style="margin-top:1rem;">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT / VALUE PROP ═══ -->
+<section class="section--tinted">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about__img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Beautiful clean home interior">
+        <div class="about__img-badge">
+          <strong>7+</strong>
+          <span>Years serving<br>our community</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="overline">About Us</span>
+        <h2 style="margin-top:0.75rem;">Bringing freshness, comfort &amp; care to every space</h2>
+        <p style="margin-top:1rem;">At Clean4Me, we go beyond surface cleaning — we bring life back to your space. Our dedicated team combines expert care, eco-friendly solutions, and meticulous attention to detail to ensure every home and property shines.</p>
+        <div class="about__checklist">
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Professional &amp; Trusted Team
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Eco-Friendly Cleaning Products
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Background-Checked, Insured Staff
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            100% Satisfaction Guaranteed
+          </div>
+        </div>
+        <a href="cleaning.html" class="btn btn--primary">Learn More About Us</a>
+      </div>
+    </div>
+
+    <!-- Flipped -->
+    <div class="about-grid about-grid--flip" style="margin-top:4rem;">
+      <div class="about__img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Clean modern property interior">
+        <div class="about__img-badge">
+          <strong>7+</strong>
+          <span>Years serving<br>our community</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <h2>Bringing freshness, comfort &amp; care to every space</h2>
+        <p style="margin-top:1rem;">At Clean4Me, we go beyond surface cleaning — we bring life back to your space. Our dedicated team combines expert care, eco-friendly solutions, and meticulous attention to detail to ensure every home and property shines.</p>
+        <div class="about__checklist">
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Professional &amp; Trusted Team
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Eco-Friendly Cleaning Products
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Background-Checked, Insured Staff
+          </div>
+          <div class="about__check">
+            <div class="about__check-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            100% Satisfaction Guaranteed
+          </div>
+        </div>
+        <a href="cleaning.html" class="btn btn--primary">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ GOOGLE REVIEWS ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="overline">What Clients Say</span>
+      <h2>Real reviews from real clients</h2>
+    </div>
+    <div class="reviews-header reveal">
+      <div class="reviews-header__badge">
+        <span class="reviews-header__g"><span class="g-b">G</span><span class="g-r">o</span><span class="g-y">o</span><span class="g-b2">g</span><span class="g-g">l</span><span class="g-r2">e</span></span>
+        <div>
+          <div class="reviews-header__score">4.9</div>
+          <div class="stars stars--lg">★★★★★</div>
+          <div class="reviews-header__info">Based on 127 reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="review-card">
+        <div class="review-card__head">
+          <div class="review-card__avatar">SM</div>
+          <div>
+            <div class="review-card__name">Sarah M.</div>
+            <div class="review-card__date">2 weeks ago</div>
+          </div>
+        </div>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__text">Absolutely amazing service! The team was thorough, professional, and left my home spotless. I've tried several cleaning companies and Clean4Me is by far the best. Highly recommend!</div>
+        <div class="review-card__source">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Posted on Google
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-card__head">
+          <div class="review-card__avatar" style="background:#ECFDF5;color:#0EA372;">JK</div>
+          <div>
+            <div class="review-card__name">James K.</div>
+            <div class="review-card__date">1 month ago</div>
+          </div>
+        </div>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__text">We've been using Clean4Me for our office cleaning for 6 months now. Consistent, reliable, and the staff is always friendly. Our workspace has never looked better. Great value too.</div>
+        <div class="review-card__source">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Posted on Google
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-card__head">
+          <div class="review-card__avatar" style="background:#FEF7E8;color:#B07810;">RL</div>
+          <div>
+            <div class="review-card__name">Rachel L.</div>
+            <div class="review-card__date">3 weeks ago</div>
+          </div>
+        </div>
+        <div class="review-card__stars">★★★★★</div>
+        <div class="review-card__text">Hired Clean4Me for a move-out deep clean and they exceeded my expectations. Got my full deposit back! The attention to detail was incredible — every corner was perfect.</div>
+        <div class="review-card__source">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Posted on Google
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Slider -->
+    <div class="testimonial-slider reveal" style="margin-top:3rem;">
+      <div class="testimonial-track">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars stars--lg" style="margin-bottom:1rem;">★★★★★</div>
+            <div class="testimonial-card__quote">Clean4Me has been managing my rental property for over two years now. They handle everything — tenant screening, maintenance, rent collection. I haven't had a single headache. The best decision I ever made as a landlord.</div>
+            <div class="testimonial-card__author">Michael T.</div>
+            <div class="testimonial-card__role">Property Owner — 3 Units</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars stars--lg" style="margin-bottom:1rem;">★★★★★</div>
+            <div class="testimonial-card__quote">I've used many cleaning services over the years and nothing compares to Clean4Me. They show up on time, they're thorough, and my home has never looked better. Worth every penny. My friends are all switching to them now!</div>
+            <div class="testimonial-card__author">Linda W.</div>
+            <div class="testimonial-card__role">Homeowner — Weekly Client</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars stars--lg" style="margin-bottom:1rem;">★★★★★</div>
+            <div class="testimonial-card__quote">From the first phone call to every visit since, Clean4Me has been professional, communicative, and genuinely caring about our space. They deep-cleaned our office and now we're on a bi-weekly plan. Our team loves coming to work now.</div>
+            <div class="testimonial-card__author">David R.</div>
+            <div class="testimonial-card__role">Business Owner — Commercial Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-dots">
+        <div class="testimonial-dot active"></div>
+        <div class="testimonial-dot"></div>
+        <div class="testimonial-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FACEBOOK SOCIAL PROOF ═══ -->
+<section class="section--tinted">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <span class="overline">Follow Us</span>
+      <h2>What's happening on our socials</h2>
+      <p>Stay up to date with our latest work, tips, and community updates.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="fb-card">
+        <div class="fb-card__head">
+          <div class="fb-card__avatar" style="font-size:1.1rem;">P</div>
+          <div>
+            <div class="fb-card__name">Clean4Me</div>
+            <div class="fb-card__time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mar 28, 2026
+            </div>
+          </div>
+        </div>
+        <div class="fb-card__text">Another beautiful move-in clean completed today! Our team worked their magic on this 3-bedroom home and the new tenants were thrilled. There's nothing like the feeling of walking into a spotless new home! ✨🏠</div>
+        <div class="fb-card__engagement">
+          <span>👍 48 Likes</span>
+          <span>💬 12 Comments</span>
+          <span>↗ 5 Shares</span>
+        </div>
+        <a href="#" class="fb-card__link">
+          View on Facebook
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head">
+          <div class="fb-card__avatar" style="font-size:1.1rem;">P</div>
+          <div>
+            <div class="fb-card__name">Clean4Me</div>
+            <div class="fb-card__time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mar 15, 2026
+            </div>
+          </div>
+        </div>
+        <div class="fb-card__text">🎉 We just hit 500+ happy clients! Thank you to every single homeowner and business that has trusted Clean4Me with their space. Your support means the world to us. Here's to many more spotless homes!</div>
+        <div class="fb-card__engagement">
+          <span>👍 92 Likes</span>
+          <span>💬 34 Comments</span>
+          <span>↗ 18 Shares</span>
+        </div>
+        <a href="#" class="fb-card__link">
+          View on Facebook
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="fb-card">
+        <div class="fb-card__head">
+          <div class="fb-card__avatar" style="font-size:1.1rem;">P</div>
+          <div>
+            <div class="fb-card__name">Clean4Me</div>
+            <div class="fb-card__time">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mar 2, 2026
+            </div>
+          </div>
+        </div>
+        <div class="fb-card__text">Spring cleaning season is here! 🌸 Book your deep clean before April and get 15% off. We'll tackle every corner — from baseboards to ceiling fans. DM us or call to schedule your appointment today!</div>
+        <div class="fb-card__engagement">
+          <span>👍 65 Likes</span>
+          <span>💬 21 Comments</span>
+          <span>↗ 9 Shares</span>
+        </div>
+        <a href="#" class="fb-card__link">
+          View on Facebook
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Ready for a spotless space?</h2>
+    <p class="reveal reveal-delay-1">Get a free quote today and discover why 500+ clients trust Clean4Me for their cleaning and property management needs.</p>
+    <div class="reveal reveal-delay-2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="cleaning.html" class="btn btn--primary btn--lg">Book a Cleaning</a>
+      <a href="property-management.html" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.2);color:var(--white);">Property Management</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT FORM ═══ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="reveal">
+        <span class="overline">Get in Touch</span>
+        <h2 style="margin-top:0.75rem;">Let's talk about your space</h2>
+        <p>Whether you need a one-off clean, regular service, or property support — drop us a message and we'll get back to you quickly.</p>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <div class="contact__detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact__detail-text">(555) 123-4567</div>
+              <div class="contact__detail-label">Give us a call anytime</div>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact__detail-text">hello@clean4me.com</div>
+              <div class="contact__detail-label">We reply within a few hours</div>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <div class="contact__detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact__detail-text"><a href="https://www.google.com/maps/place/Clean4ME-Cleaning+%26+Property+Management/@57.6477166,-3.3173826,17z" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-underline-offset:2px;">Elgin, IL</a></div>
+              <div class="contact__detail-label">View us on Google Maps</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__map">
+          <iframe src="https://maps.google.com/maps?q=Clean4ME-Cleaning+%26+Property+Management,+Elgin&t=&z=15&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <form class="contact__form reveal reveal-delay-2" onsubmit="event.preventDefault();">
+        <h3>Send us a message</h3>
+        <p>Fill in the form and we'll get back to you shortly.</p>
+        <div class="form__row">
+          <div class="form__group">
+            <label class="form__label" for="name">Full Name</label>
+            <input class="form__input" type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="phone">Phone Number</label>
+            <input class="form__input" type="tel" id="phone" name="phone" placeholder="Your phone number">
+          </div>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Email Address</label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="service">Service Needed</label>
+          <select class="form__select" id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="residential">Residential Cleaning</option>
+            <option value="commercial">Commercial Cleaning</option>
+            <option value="deep-clean">Deep Cleaning</option>
+            <option value="move-in-out">Move-In / Move-Out</option>
+            <option value="post-construction">Post-Construction</option>
+            <option value="regular">Regular Maintenance</option>
+            <option value="property-support">Property Support</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="message">Message</label>
+          <textarea class="form__textarea" id="message" name="message" placeholder="Tell us about your space and what you need..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg form__submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="logo.png" alt="Clean4Me" style="height:28px;display:inline-block;vertical-align:middle;margin-right:0.5rem;">Clean4ME</div>
+        <p>Professional cleaning services and property management you can trust. Serving our community with care, consistency, and quality since 2018.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Google">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Quick Links</div>
+        <div class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="cleaning.html">Cleaning Services</a>
+          <a href="property-management.html">Property Management</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Services</div>
+        <div class="footer__links">
+          <a href="cleaning.html">Residential Cleaning</a>
+          <a href="cleaning.html">Commercial Cleaning</a>
+          <a href="cleaning.html">Deep Cleaning</a>
+          <a href="cleaning.html">Move-In / Move-Out</a>
+          <a href="property-management.html">Tenant Placement</a>
+          <a href="property-management.html">Property Maintenance</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">Contact</div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Elgin, IL</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(555) 123-4567</span>
+        </div>
+        <div class="footer__contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>hello@clean4me.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Clean4Me Cleaning &amp; Property Management. All rights reserved.</span>
+      <span>Licensed &amp; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
