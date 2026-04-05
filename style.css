@@ -230,7 +230,7 @@ section { padding: 6rem 0; }
 }
 .hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(11,26,48,0.88) 0%, rgba(11,26,48,0.65) 40%, rgba(39,86,232,0.3) 100%);
+  background: linear-gradient(135deg, rgba(11,26,48,0.92) 0%, rgba(11,26,48,0.78) 40%, rgba(39,86,232,0.45) 100%);
 }
 .hero__grain {
   position: absolute; inset: 0; opacity: 0.3; pointer-events: none;
@@ -862,7 +862,7 @@ section { padding: 6rem 0; }
   .hero { min-height: 80vh; }
   .hero--sub { min-height: 45vh; }
   .hero__overlay {
-    background: linear-gradient(180deg, rgba(11,26,48,0.92) 0%, rgba(11,26,48,0.8) 50%, rgba(11,26,48,0.7) 100%);
+    background: linear-gradient(180deg, rgba(11,26,48,0.95) 0%, rgba(11,26,48,0.85) 50%, rgba(11,26,48,0.75) 100%);
   }
   .trust-bar__inner { gap: 2rem; justify-content: flex-start; overflow-x: auto; padding: 0 1rem; }
   .testimonial-card { padding: 2rem 1.5rem; }
