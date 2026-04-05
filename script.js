@@ -135,21 +135,25 @@ function initGSAP() {
   // ─── Helper: animate elements on scroll ───
   function animateIn(elements, triggerEl, props) {
     if (!elements || (elements.length !== undefined && !elements.length)) return;
-    gsap.fromTo(elements,
-      { y: props.y || 40, opacity: 0, x: props.x || 0, scale: props.scale || 1 },
-      {
-        y: 0, opacity: 1, x: 0, scale: 1,
-        duration: props.duration || 0.7,
-        stagger: props.stagger || 0,
-        delay: props.delay || 0,
-        ease: props.ease || 'power3.out',
-        scrollTrigger: {
-          trigger: triggerEl,
-          start: props.start || 'top 88%',
-          once: true
-        }
+    // Mark elements so the catch-all skips them
+    if (elements.length !== undefined) {
+      Array.from(elements).forEach(el => el.dataset.gsap = '1');
+    } else {
+      elements.dataset.gsap = '1';
+    }
+    gsap.set(elements, { opacity: 0, y: props.y || 40, x: props.x || 0, scale: props.scale || 1 });
+    gsap.to(elements, {
+      y: 0, opacity: 1, x: 0, scale: 1,
+      duration: props.duration || 0.7,
+      stagger: props.stagger || 0,
+      delay: props.delay || 0,
+      ease: props.ease || 'power3.out',
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: props.start || 'top 88%',
+        once: true
       }
-    );
+    });
   }
 
   // ─── Hero Section ───
@@ -264,14 +268,12 @@ function initGSAP() {
   });
 
   // ─── Universal Catch-All ───
-  // Animate any section content not already handled
-  document.querySelectorAll('section').forEach(section => {
+  // Animate any section content not already handled by specific animations
+  document.querySelectorAll('section, .trust-bar').forEach(section => {
     if (section.classList.contains('hero') || section.querySelector('.hero__bg')) return;
-    const container = section.querySelector('.container');
-    if (!container) return;
+    const container = section.querySelector('.container') || section;
     Array.from(container.children).forEach(child => {
       if (child.dataset.gsap) return;
-      child.dataset.gsap = '1';
       animateIn(child, child, { y: 35 });
     });
   });

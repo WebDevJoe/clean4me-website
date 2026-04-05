@@ -809,8 +809,7 @@ section { padding: 6rem 0; }
   50% { transform: translateY(-10px); }
 }
 
-/* Reveal classes kept for markup compatibility — GSAP handles animation */
-.reveal, .reveal.visible { opacity: 1; transform: none; }
+/* GSAP handles all scroll animations — elements start hidden */
 .reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4, .reveal-delay-5 { }
 
 .hero__content h1, .hero__content p, .hero__actions, .hero__float {
