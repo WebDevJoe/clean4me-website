@@ -636,7 +636,7 @@ section { padding: 6rem 0; }
 .faq-a {
   max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease);
 }
-.faq-a__inner { padding: 0 1.5rem 1.25rem; font-size: 0.9rem; color: var(--text-sec); line-height: 1.7; }
+.faq-a__inner { padding: 0.25rem 1.5rem 1.25rem; font-size: 0.9rem; color: var(--text-sec); line-height: 1.7; }
 
 /* ─── 21. CTA Section ─── */
 .cta-section {
@@ -740,19 +740,19 @@ section { padding: 6rem 0; }
 /* ─── 22. Footer ─── */
 .footer { background: var(--navy); padding: 4rem 0 0; color: rgba(255,255,255,0.6); }
 .footer__top {
-  display: flex; gap: 4rem; padding-bottom: 3rem;
+  display: flex; gap: 2rem; padding-bottom: 2.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.footer__brand { flex-shrink: 0; max-width: 300px; }
+.footer__brand { flex-shrink: 0; }
 .footer__grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; flex: 1;
 }
-.footer__brand p { font-size: 0.88rem; margin-top: 1rem; line-height: 1.7; max-width: 280px; }
+.footer__brand p { font-size: 0.92rem; margin-top: 1rem; line-height: 1.7; max-width: 400px; color: rgba(255,255,255,0.45); }
 .footer__logo {
-  font-family: var(--font-display); font-size: 1.35rem; font-weight: 800;
-  color: var(--white); display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 800;
+  color: var(--white); display: inline-flex; align-items: center; gap: 0.6rem;
 }
-.footer__logo img { height: 28px; width: auto; }
+.footer__logo img { height: 40px; width: auto; }
 .footer__heading {
   font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.08em;
@@ -772,8 +772,8 @@ section { padding: 6rem 0; }
 .footer__social a:hover { background: var(--blue); color: var(--white); }
 .footer__social a svg { width: 16px; height: 16px; }
 .footer__bottom {
-  padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between;
-  font-size: 0.8rem;
+  padding: 1.5rem 0; display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; font-size: 0.8rem; text-align: center;
 }
 
 /* ─── 23. Section Headers ─── */
