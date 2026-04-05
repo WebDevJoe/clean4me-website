@@ -820,6 +820,9 @@ section { padding: 6rem 0; }
 .hero__actions { animation-delay: 300ms; }
 .hero__float { animation: slideLeft 800ms var(--ease) 500ms both; }
 
+/* Card-anchored badges — hidden on desktop, shown on mobile */
+.cta-card-badge { display: none; }
+
 /* ─── 26. Responsive ─── */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -831,6 +834,14 @@ section { padding: 6rem 0; }
   .about-grid { gap: 2.5rem; }
   .hero__float { display: none; }
   .pm-services { grid-template-columns: 1fr; }
+
+  /* Owners section — stack on tablet */
+  .owners-row { grid-template-columns: 1fr !important; }
+  .owners-featured { flex-direction: column !important; min-height: auto !important; }
+
+  /* Glass CTA — swap floating for card-anchored badges */
+  .cta-badge { display: none !important; }
+  .cta-card-badge { display: block !important; }
 }
 
 @media (max-width: 768px) {
@@ -852,6 +863,23 @@ section { padding: 6rem 0; }
   .trust-bar__inner { gap: 2rem; justify-content: flex-start; overflow-x: auto; padding: 0 1rem; }
   .testimonial-card { padding: 2rem 1.5rem; }
   .reviews-header { flex-direction: column; align-items: flex-start; }
+
+  /* Owners section */
+  .owners-row { grid-template-columns: 1fr !important; }
+  .owners-row .card { height: auto !important; }
+  .owners-featured {
+    flex-direction: column !important;
+    padding: 1.75rem !important;
+    min-height: auto !important;
+  }
+
+  /* Glass CTA */
+  .cta-glass { padding: 4rem 0 !important; }
+  .cta-glass .cta-glass-card {
+    padding: 2rem 1.5rem !important;
+    border-radius: 1.5rem !important;
+  }
+  .cta-glass .cta-glass-card h2 { font-size: 1.75rem !important; }
 }
 
 @media (max-width: 480px) {
@@ -859,4 +887,22 @@ section { padding: 6rem 0; }
   .hero { min-height: 75vh; }
   .btn--lg { padding: 0.85rem 1.5rem; font-size: 0.95rem; }
   .stats__grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  /* Owners section */
+  .owners-row .card { height: auto !important; }
+  .owners-featured {
+    padding: 1.25rem !important;
+    gap: 1.25rem !important;
+  }
+  .owners-featured h3 { font-size: 1.5rem !important; }
+  .owners-featured > div:last-child { width: 100% !important; }
+
+  /* Glass CTA */
+  .cta-glass { padding: 3rem 0 !important; }
+  .cta-glass .cta-glass-card {
+    padding: 1.75rem 1.25rem !important;
+    border-radius: 1.25rem !important;
+  }
+  .cta-glass .cta-glass-card h2 { font-size: 1.375rem !important; }
+  .cta-glass .cta-glass-card p { font-size: 0.875rem !important; }
 }
