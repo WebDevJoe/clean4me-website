@@ -652,7 +652,7 @@ section { padding: 6rem 0; }
 
 /* ─── 21a. Contact Form ─── */
 .contact { background: var(--surface); }
-.contact__grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+.contact__grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 4rem; align-items: start; }
 .contact__info h2 { margin-top: 0.75rem; }
 .contact__info p { margin-top: 0.75rem; }
 .contact__details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
@@ -697,7 +697,7 @@ section { padding: 6rem 0; }
   padding-right: 2.5rem;
 }
 .form__textarea { resize: vertical; min-height: 120px; }
-.form__submit { width: 100%; margin-top: 0.5rem; }
+.form__submit { width: 100%; margin-top: 0.5rem; text-align: center; justify-content: center; }
 
 @media (max-width: 768px) {
   .contact__grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -739,9 +739,13 @@ section { padding: 6rem 0; }
 
 /* ─── 22. Footer ─── */
 .footer { background: var(--navy); padding: 4rem 0 0; color: rgba(255,255,255,0.6); }
+.footer__top {
+  display: flex; gap: 4rem; padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer__brand { flex-shrink: 0; max-width: 300px; }
 .footer__grid {
-  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem;
-  padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; flex: 1;
 }
 .footer__brand p { font-size: 0.88rem; margin-top: 1rem; line-height: 1.7; max-width: 280px; }
 .footer__logo {
@@ -805,13 +809,9 @@ section { padding: 6rem 0; }
   50% { transform: translateY(-10px); }
 }
 
-.reveal { opacity: 0; transform: translateY(30px); transition: all 700ms var(--ease); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 100ms; }
-.reveal-delay-2 { transition-delay: 200ms; }
-.reveal-delay-3 { transition-delay: 300ms; }
-.reveal-delay-4 { transition-delay: 400ms; }
-.reveal-delay-5 { transition-delay: 500ms; }
+/* Reveal classes kept for markup compatibility — GSAP handles animation */
+.reveal, .reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4, .reveal-delay-5 { }
 
 .hero__content h1, .hero__content p, .hero__actions, .hero__float {
   animation: fadeUp 800ms var(--ease) both;
@@ -830,7 +830,8 @@ section { padding: 6rem 0; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer__grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__top { flex-direction: column; gap: 2.5rem; }
+  .footer__grid { grid-template-columns: repeat(3, 1fr); }
   .about-grid { gap: 2.5rem; }
   .hero__float { display: none; }
   .pm-services { grid-template-columns: 1fr; }
@@ -856,6 +857,7 @@ section { padding: 6rem 0; }
   .about-grid { grid-template-columns: 1fr; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .steps { grid-template-columns: 1fr; }
+  .footer__top { flex-direction: column; gap: 2rem; }
   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   .hero { min-height: 80vh; }
