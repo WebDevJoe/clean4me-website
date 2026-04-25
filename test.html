@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Test Page — Section Improvements (Clean4ME)</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Storefront palette overrides ===== */
+  body {
+    --ink: #1e1f23;
+    --charcoal: #3a3d42;
+    --bone: #f0d77a;
+    --bone-deep: #d9b85a;
+    --bone-soft: rgba(240,215,122,0.16);
+    --paper: #faf9f3;
+    --cream: #f5f1de;
+    --line: #e6e1cf;
+    --text-mute: #8a8779;
+
+    /* Override the imported style.css vars */
+    --blue: #1e1f23;
+    --blue-hover: #3a3d42;
+    --blue-light: #fbf3d4;
+    --blue-50: #fdfaeb;
+    --navy: #1e1f23;
+    --navy-mid: #3a3d42;
+    --text: #1e1f23;
+    --text-sec: #565862;
+    --text-muted: #8a8779;
+    --border: #e6e1cf;
+    --surface: #f5f1de;
+    --bg: #faf9f3;
+    --shadow-blue: 0 4px 24px rgba(30,31,35,0.18);
+    background: var(--paper);
+  }
+  /* Buttons retuned for the new palette */
+  body .btn--primary { background: var(--ink); color: #fff; box-shadow: 0 4px 18px rgba(30,31,35,0.18); }
+  body .btn--primary:hover { background: var(--charcoal); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,31,35,0.28); }
+
+  /* ===== Test-page only styles ===== */
+  .test-banner {
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--ink); color: var(--paper);
+    padding: 0.65rem 1rem; text-align: center;
+    font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .test-banner span { color: var(--bone); }
+  .test-section { padding: 6rem 0; }
+  .test-section--alt { background: var(--cream); }
+  .test-label {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.35rem 0.75rem; margin-bottom: 1.25rem;
+    background: var(--bone-soft); color: var(--ink);
+    font-family: var(--font-display); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 999px; border: 1px solid rgba(217,184,90,0.4);
+  }
+  .test-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--bone-deep); }
+
+  /* ===== 1. ELEVATED HERO ===== */
+  .hero-v2 {
+    position: relative; min-height: 92vh; display: flex; align-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(80% 60% at 75% 20%, rgba(240,215,122,0.18), transparent 60%),
+      linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+  }
+  .hero-v2::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30,31,35,0.07) 1px, transparent 0);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(60% 70% at 30% 50%, black, transparent 70%);
+    mask-image: radial-gradient(60% 70% at 30% 50%, black, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-v2__inner {
+    position: relative; display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 4rem; align-items: center; padding: 4rem 0;
+  }
+  .hero-v2__eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--bone-soft);
+    border: 1px solid rgba(217,184,90,0.4);
+    color: var(--ink);
+    border-radius: 999px;
+    font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .hero-v2__pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--bone-deep);
+    box-shadow: 0 0 0 0 var(--bone-deep);
+    animation: heroPulse 2s ease-out infinite;
+  }
+  @keyframes heroPulse {
+    0% { box-shadow: 0 0 0 0 rgba(217,184,90,0.55); }
+    70% { box-shadow: 0 0 0 8px rgba(217,184,90,0); }
+    100% { box-shadow: 0 0 0 0 rgba(217,184,90,0); }
+  }
+  .hero-v2__title {
+    margin-top: 1.5rem;
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-weight: 800; line-height: 1.02; letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .hero-v2__title-accent {
+    display: inline-block; position: relative; color: var(--ink);
+  }
+  .hero-v2__title-accent::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0.05em;
+    height: 0.32em; z-index: -1;
+    background: linear-gradient(90deg, var(--bone) 0%, rgba(240,215,122,0.35) 100%);
+    border-radius: 4px;
+    transform-origin: left;
+    animation: heroSwipe 1.4s 0.6s var(--ease) both;
+  }
+  @keyframes heroSwipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .hero-v2__sub {
+    margin-top: 1.5rem; max-width: 480px;
+    font-size: 1.1rem; line-height: 1.6; color: var(--text-sec);
+  }
+  .hero-v2__cta {
+    margin-top: 2.5rem;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .hero-v2__rating {
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-v2__avatars {
+    display: flex;
+  }
+  .hero-v2__avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 2px solid var(--paper);
+    background: linear-gradient(135deg, #d8d2bb, #b0a781);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; color: var(--ink);
+    box-shadow: 0 2px 8px rgba(30,31,35,0.1);
+  }
+  .hero-v2__avatar:not(:first-child) { margin-left: -10px; }
+  .hero-v2__avatar:nth-child(2) { background: linear-gradient(135deg, var(--bone), var(--bone-deep)); }
+  .hero-v2__avatar:nth-child(3) { background: linear-gradient(135deg, #d6d4cc, #8a8779); color: var(--paper); }
+  .hero-v2__rating-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .hero-v2__rating-stars { color: var(--bone-deep); font-size: 0.85rem; letter-spacing: 0.1em; }
+  .hero-v2__rating-label { font-size: 0.78rem; color: var(--text-mute); }
+
+  .hero-v2__visual {
+    position: relative; aspect-ratio: 4/5;
+    border-radius: 2rem; overflow: hidden;
+    box-shadow: 0 30px 80px -20px rgba(30,31,35,0.3);
+  }
+  .hero-v2__visual img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-v2__chip {
+    position: absolute; padding: 0.7rem 1rem;
+    background: rgba(250,249,243,0.94);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px -8px rgba(30,31,35,0.22);
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.85rem; font-weight: 600; color: var(--ink);
+  }
+  .hero-v2__chip svg { width: 18px; height: 18px; color: var(--bone-deep); }
+  .hero-v2__chip--top { top: 1.5rem; left: 1.5rem; animation: float 6s ease-in-out infinite; }
+  .hero-v2__chip--bottom { bottom: 1.5rem; right: 1.5rem; animation: float 6s 2s ease-in-out infinite reverse; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  /* ===== 2. STATS / IMPACT BAND ===== */
+  .impact-band {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--charcoal) 100%);
+    color: var(--paper); padding: 5rem 0;
+    position: relative; overflow: hidden;
+  }
+  .impact-band::after {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(240,215,122,0.06), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(240,215,122,0.04), transparent 40%);
+    pointer-events: none;
+  }
+  .impact-grid {
+    position: relative; display: grid;
+    grid-template-columns: repeat(4, 1fr); gap: 2rem;
+  }
+  .impact-stat { text-align: left; padding-right: 1rem; position: relative; }
+  .impact-stat:not(:last-child)::after {
+    content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 60%; background: rgba(240,215,122,0.18);
+  }
+  .impact-stat__num {
+    font-family: var(--font-display);
+    font-size: 3.5rem; font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, var(--bone) 0%, rgba(240,215,122,0.6) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+  }
+  .impact-stat__label {
+    margin-top: 0.6rem;
+    font-size: 0.92rem; color: rgba(250,249,243,0.7);
+    line-height: 1.4;
+  }
+
+  /* ===== 3. INTERACTIVE SERVICE CARD ===== */
+  .svc-v2 {
+    position: relative; aspect-ratio: 4/5;
+    border-radius: 1.5rem; overflow: hidden;
+    isolation: isolate; cursor: pointer;
+    transition: transform 500ms var(--ease);
+  }
+  .svc-v2:hover { transform: translateY(-8px); }
+  .svc-v2 img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -2;
+    transition: transform 700ms var(--ease);
+  }
+  .svc-v2:hover img { transform: scale(1.08); }
+  .svc-v2::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, transparent 30%, rgba(30,31,35,0.55) 60%, rgba(30,31,35,0.96) 100%);
+  }
+  .svc-v2__tag { color: var(--bone); }
+  .svc-v2__body {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 1.75rem; color: #fff;
+  }
+  .svc-v2__tag {
+    display: inline-flex; padding: 0.3rem 0.7rem;
+    background: rgba(255,255,255,0.16);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+  }
+  .svc-v2__title {
+    font-family: var(--font-display); font-size: 1.45rem; font-weight: 700;
+    line-height: 1.15;
+  }
+  .svc-v2__desc {
+    margin-top: 0.65rem; font-size: 0.88rem; line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    max-height: 0; overflow: hidden;
+    transition: max-height 400ms var(--ease), margin-top 400ms var(--ease);
+  }
+  .svc-v2:hover .svc-v2__desc { max-height: 100px; }
+  .svc-v2__cta {
+    margin-top: 1rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem; font-weight: 600; color: #fff;
+    transform: translateY(8px); opacity: 0.85;
+    transition: transform 400ms var(--ease), opacity 400ms;
+  }
+  .svc-v2:hover .svc-v2__cta { transform: translateY(0); opacity: 1; }
+  .svc-v2__cta svg { width: 14px; height: 14px; transition: transform 300ms; }
+  .svc-v2:hover .svc-v2__cta svg { transform: translateX(4px); }
+
+  /* ===== 4. PROCESS TIMELINE ===== */
+  .timeline { position: relative; padding: 1rem 0; }
+  .timeline__track {
+    position: absolute; top: 38px; left: calc(12.5% + 24px); right: calc(12.5% + 24px);
+    height: 2px; background: var(--border);
+    z-index: 0;
+  }
+  .timeline__track-fill {
+    position: absolute; top: 0; left: 0; height: 100%;
+    background: var(--ink);
+    width: 0%;
+    animation: timelineFill 2s 0.4s var(--ease) both;
+  }
+  @keyframes timelineFill { from { width: 0; } to { width: 100%; } }
+  .timeline__steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem; position: relative;
+  }
+  .timeline__step { text-align: center; }
+  .timeline__node {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem; color: var(--ink);
+    transition: all 300ms var(--ease);
+    position: relative; z-index: 1;
+  }
+  .timeline__node svg { width: 22px; height: 22px; }
+  .timeline__step.is-active .timeline__node {
+    background: var(--ink); border-color: var(--ink); color: var(--bone);
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px -6px rgba(30,31,35,0.5);
+  }
+  .timeline__step-num {
+    font-size: 0.72rem; font-weight: 700; color: var(--text-mute);
+    letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .timeline__step-title {
+    font-size: 1.05rem; font-weight: 700; color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .timeline__step-desc {
+    font-size: 0.85rem; color: var(--text-sec); line-height: 1.55;
+  }
+
+  /* ===== 5. REGIONAL COVERAGE ===== */
+  .coverage {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .coverage__regions {
+    display: grid; gap: 0.85rem; margin-top: 1.5rem;
+  }
+  .coverage__region {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    transition: all 300ms var(--ease);
+  }
+  .coverage__region:hover {
+    border-color: var(--ink);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+  }
+  .coverage__region-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--bone-soft); color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .coverage__region-icon svg { width: 20px; height: 20px; }
+  .coverage__region-name {
+    font-size: 1.02rem; font-weight: 700; color: var(--ink);
+  }
+  .coverage__region-meta {
+    font-size: 0.82rem; color: var(--text-mute); margin-top: 0.15rem;
+  }
+  .coverage__region-status {
+    margin-left: auto;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 600; color: var(--bone-deep);
+  }
+  .coverage__region-status::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--bone-deep);
+    box-shadow: 0 0 8px var(--bone-deep);
+  }
+  .coverage__map {
+    aspect-ratio: 1; border-radius: 24px;
+    background: linear-gradient(135deg, var(--bone-soft), var(--paper));
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .coverage__map svg { width: 75%; color: var(--ink); }
+  .coverage__map svg path[fill] { fill: rgba(240,215,122,0.18) !important; }
+  .coverage__map svg circle[fill="currentColor"] { fill: var(--bone-deep); }
+  .coverage__map::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(30,31,35,0.08) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px) {
+    .hero-v2__inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-v2__visual { aspect-ratio: 16/10; }
+    .impact-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; }
+    .impact-stat:nth-child(2)::after { display: none; }
+    .timeline__steps { grid-template-columns: repeat(2, 1fr); }
+    .timeline__track { display: none; }
+    .coverage { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .test-section { padding: 4rem 0; }
+    .impact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .impact-stat::after { display: none !important; }
+    .impact-stat__num { font-size: 2.75rem; }
+    .timeline__steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="test-banner">
+  <span>TEST PAGE</span> &nbsp;·&nbsp; Improved section concepts. Live pages are unchanged.
+</div>
+
+<!-- ===== 1. ELEVATED HERO ===== -->
+<section class="hero-v2">
+  <div class="container">
+    <div class="hero-v2__inner">
+      <div>
+        <span class="hero-v2__eyebrow">
+          <span class="hero-v2__pulse"></span>
+          Booking Spring 2026
+        </span>
+        <h1 class="hero-v2__title">Cleaning that lets you <span class="hero-v2__title-accent">switch off</span>.</h1>
+        <p class="hero-v2__sub">Reliable, professional cleaning across Moray, Aberdeenshire, and the Highlands &amp; Islands. Run by Andrew &amp; the team.</p>
+        <div class="hero-v2__cta">
+          <a href="index.html#contact" class="btn btn--primary btn--lg">Get a Free Quote</a>
+          <div class="hero-v2__rating">
+            <div class="hero-v2__avatars">
+              <span class="hero-v2__avatar">B</span>
+              <span class="hero-v2__avatar">N</span>
+              <span class="hero-v2__avatar">A</span>
+            </div>
+            <div class="hero-v2__rating-text">
+              <span class="hero-v2__rating-stars">★★★★★</span>
+              <span class="hero-v2__rating-label">4.7 from 15 Google reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-v2__visual">
+        <img src="cta-van.jpg" alt="Clean4ME van">
+        <div class="hero-v2__chip hero-v2__chip--top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Fully Insured
+        </div>
+        <div class="hero-v2__chip hero-v2__chip--bottom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Quotes within the hour
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. IMPACT BAND ===== -->
+<section class="impact-band">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="impact-stat">
+        <div class="impact-stat__num" data-count="20" data-suffix="+">0</div>
+        <div class="impact-stat__label">Years in the industry</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat__num" data-count="500" data-suffix="+">0</div>
+        <div class="impact-stat__label">Happy clients served</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat__num" data-count="4.7" data-suffix="★">0</div>
+        <div class="impact-stat__label">Google rating</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat__num" data-count="100" data-suffix="%">0</div>
+        <div class="impact-stat__label">Satisfaction guarantee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. INTERACTIVE SERVICE GRID ===== -->
+<section class="test-section test-section--alt">
+  <div class="container">
+    <span class="test-label">Concept · Service Cards</span>
+    <h2 style="font-size:2.25rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.5rem;">Hover the cards</h2>
+    <p style="color:var(--text-sec);margin-bottom:2.5rem;max-width:520px;">Interactive variant: image fills the card, copy reveals on hover, content stays minimal at rest.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      <a class="svc-v2" href="cleaning.html">
+        <img src="svc-movein.jpg" alt="Move-in / Move-out cleaning">
+        <div class="svc-v2__body">
+          <span class="svc-v2__tag">Move-In / Out</span>
+          <h3 class="svc-v2__title">End of Tenancy</h3>
+          <p class="svc-v2__desc">Deposit-back deep cleans for landlords, tenants, and military march-out moves.</p>
+          <span class="svc-v2__cta">Explore service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+      <a class="svc-v2" href="cleaning.html">
+        <img src="svc-office.jpg" alt="Office cleaning">
+        <div class="svc-v2__body">
+          <span class="svc-v2__tag">Commercial</span>
+          <h3 class="svc-v2__title">Office Cleaning</h3>
+          <p class="svc-v2__desc">Out-of-hours cleans for offices, shops, and shared workspaces.</p>
+          <span class="svc-v2__cta">Explore service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+      <a class="svc-v2" href="cleaning.html">
+        <img src="svc-construction.jpg" alt="Post construction">
+        <div class="svc-v2__body">
+          <span class="svc-v2__tag">Specialty</span>
+          <h3 class="svc-v2__title">Post Construction &amp; Welfare</h3>
+          <p class="svc-v2__desc">Fine-dust removal and snag-list polish for newly built or renovated spaces.</p>
+          <span class="svc-v2__cta">Explore service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. PROCESS TIMELINE ===== -->
+<section class="test-section">
+  <div class="container">
+    <span class="test-label">Concept · How We Work</span>
+    <h2 style="font-size:2.25rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.5rem;">Four steps from quote to clean</h2>
+    <p style="color:var(--text-sec);margin-bottom:3rem;max-width:520px;">Animated horizontal timeline with a progress fill — easy to scan, immediately suggests how simple it is.</p>
+    <div class="timeline">
+      <div class="timeline__track"><div class="timeline__track-fill"></div></div>
+      <div class="timeline__steps">
+        <div class="timeline__step is-active">
+          <div class="timeline__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="timeline__step-num">Step 01</div>
+          <div class="timeline__step-title">Get in touch</div>
+          <div class="timeline__step-desc">Call, email, or use the form. We respond within the hour.</div>
+        </div>
+        <div class="timeline__step is-active">
+          <div class="timeline__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="timeline__step-num">Step 02</div>
+          <div class="timeline__step-title">Free quote</div>
+          <div class="timeline__step-desc">Transparent pricing, no obligation. We tailor it to your space.</div>
+        </div>
+        <div class="timeline__step is-active">
+          <div class="timeline__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="timeline__step-num">Step 03</div>
+          <div class="timeline__step-title">Book a date</div>
+          <div class="timeline__step-desc">Pick a slot that suits, including evenings and weekends.</div>
+        </div>
+        <div class="timeline__step is-active">
+          <div class="timeline__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="timeline__step-num">Step 04</div>
+          <div class="timeline__step-title">Spotless space</div>
+          <div class="timeline__step-desc">We turn up, do the job properly, and leave it gleaming.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. REGIONAL COVERAGE ===== -->
+<section class="test-section test-section--alt">
+  <div class="container">
+    <div class="coverage">
+      <div>
+        <span class="test-label">Concept · Coverage</span>
+        <h2 style="font-size:2.25rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.75rem;">Where we work</h2>
+        <p style="color:var(--text-sec);max-width:480px;">Replaces a flat list with a status-style coverage panel. Live indicators reinforce that we're actively booking.</p>
+        <div class="coverage__regions">
+          <div class="coverage__region">
+            <div class="coverage__region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="coverage__region-name">Moray</div>
+              <div class="coverage__region-meta">Elgin, Forres, Lossiemouth</div>
+            </div>
+            <div class="coverage__region-status">Booking now</div>
+          </div>
+          <div class="coverage__region">
+            <div class="coverage__region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="coverage__region-name">Aberdeenshire</div>
+              <div class="coverage__region-meta">Huntly, Inverurie, Banff</div>
+            </div>
+            <div class="coverage__region-status">Booking now</div>
+          </div>
+          <div class="coverage__region">
+            <div class="coverage__region-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <div class="coverage__region-name">Highlands &amp; Islands</div>
+              <div class="coverage__region-meta">Inverness, Nairn, surrounding areas</div>
+            </div>
+            <div class="coverage__region-status">Booking now</div>
+          </div>
+        </div>
+      </div>
+      <div class="coverage__map">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M50 30 Q70 20 90 35 T130 50 Q150 60 160 80 Q165 110 145 130 Q130 150 100 155 Q70 160 55 140 Q35 120 40 90 Q42 60 50 30 Z" fill="rgba(240,215,122,0.18)"/>
+          <circle cx="80" cy="70" r="4" fill="currentColor"/>
+          <circle cx="80" cy="70" r="10" fill="none" stroke="currentColor" opacity="0.4"/>
+          <circle cx="115" cy="85" r="4" fill="currentColor"/>
+          <circle cx="115" cy="85" r="10" fill="none" stroke="currentColor" opacity="0.4"/>
+          <circle cx="95" cy="120" r="4" fill="currentColor"/>
+          <circle cx="95" cy="120" r="10" fill="none" stroke="currentColor" opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Count-up for impact stats
+  const counters = document.querySelectorAll('[data-count]');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = !Number.isInteger(target);
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const v = target * eased;
+        el.textContent = (isDecimal ? v.toFixed(1) : Math.round(v)) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => obs.observe(c));
+</script>
+</body>
+</html>
